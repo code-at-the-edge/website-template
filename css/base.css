@@ -1,0 +1,30 @@
+:root {
+    --color-primary: #1a9f60;
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #7e818b;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 100vw;
+    --grid-gutter: 0.5rem;
+    --font-size: 1.6rem;
+    --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+                   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+                   "Droid Sans", "Helvetica Neue", sans-serif;
+    --color-lightestGrey: #e0e4dd;
+}
+
+main > * {
+    /* border: 1px solid black; */
+    background-color: var(--color-lightestGrey);
+}
+
+
+header.site-header {
+    background-color: var(--color-lightGrey);
+}
+
+footer.site-footer {
+    background-color: var(--color-lightGrey);
+    
+}
