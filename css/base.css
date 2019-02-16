@@ -17,77 +17,61 @@
 
 }
 
-/* .container { */
-/*     display: flex; */
-/*     flex-direction: column; */
-/*     min-height: 100vh; */
-/*     min-width: 100vw; */
-/* } */
 
-
-/* main { */
-/*     /\* display: grid; *\/ */
-/*     /\* grid-template-areas: "article aside"; *\/ */
-/*     flex-grow: 1; */
-/* } */
 body {
     background-color: var(--color-lightestGrey);
 
     }
 
-main {
-    background-color: var(--color-lightestGrey);
-    display: grid;
-    grid-template-areas: "nav          nav       nav        nav    "
-                         "description  article   article    sidebar"
-                         "description  pictures  pictures   sidebar"
-                         "footer       footer    footer     footer ";
-    min-height: 100vh;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
-    grid-template-rows: 5rem auto auto minmax(5rem,auto);
-    grid-gap: 3rem;
-}
-
-main>* {
-    padding-left: 1rem;
-}
-main>header {
-    grid-area: nav;
-}
-
-main>article {
-    grid-area: article;
-}
-
-main  .pictures {
-    grid-area: pictures;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 20rem));
-    grid-gap: 1rem;
-}
-
-main > section.description {
-    grid-area: description;
-    max-height: 100%;
+div#outside-container {
     display: flex;
     flex-direction: column;
 }
 
+main {
+    
+    background-color: var(--color-lightestGrey);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: center; 
+}
+
+main > * {
+    margin: 10px;
+}
+main > section.description {
+    flex-basis: 25%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}
+
+main > article {
+    flex-basis: 60%;
+}
 
 main>aside.sidebar {
-    grid-area: sidebar;
+    flex-basis: 25%;
 }
 
-main>footer.site-footer {
-    grid-area: footer;
-} 
-main > * {
-    /* border: 1px solid black; */
-    background-color: var(--color-lightestGrey);
+.pictures {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: stretch;
 }
 
 
+.pictures > img {
+    margin: 10px;
+    flex-basis: 25%
+}
+
+.pictures > p {
+    flex-basis: 50%;
+}
 header.site-header {
     background-color: var(--color-lightGrey);
 }
@@ -96,7 +80,6 @@ footer.site-footer {
     background-color: var(--color-lightGrey);
     
 }
-
 
 .pull-left {
     margin-right: 2rem;
