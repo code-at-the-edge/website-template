@@ -6,12 +6,15 @@
     --color-error: #d43939;
     --color-success: #28bd14;
     --grid-maxWidth: 100vw;
+    /* --grid-maxWidth: 120rem; */
     --grid-gutter: 0.5rem;
     --font-size: 1.6rem;
     --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
                    "Droid Sans", "Helvetica Neue", sans-serif;
     --color-lightestGrey: #e0e4dd;
+ 
+
 }
 
 /* .container { */
@@ -28,17 +31,21 @@
 /*     flex-grow: 1; */
 /* } */
 body {
+    background-color: var(--color-lightestGrey);
+
     }
 
 main {
     background-color: var(--color-lightestGrey);
     display: grid;
-    grid-template-areas: "nav     nav     nav     nav"
-                         "article article article sidebar"
-                         "footer  footer  footer  footer";
+    grid-template-areas: "nav          nav       nav        nav    "
+                         "description  article   article    sidebar"
+                         "description  pictures  pictures   sidebar"
+                         "footer       footer    footer     footer ";
     min-height: 100vh;
-    grid-template-rows: 5rem 1fr 10rem ;
-    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-rows: 5rem auto auto minmax(5rem,auto);
+    grid-gap: 3rem;
 }
 
 main>* {
@@ -50,20 +57,23 @@ main>header {
 
 main>article {
     grid-area: article;
-    display: grid;
-    grid-template-columns: 3fr 1fr;  /* 3fr 1fr; */
-    grid-template-rows: auto;
-+    grid-gap: 5rem;
 }
 
-main>article>   .pictures {
-    grid-column: 1/2;
-    grid-row:1/2;
+main  .pictures {
+    grid-area: pictures;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(5rem, 20rem));
-    grid-template-rows: 1fr;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
 }
+
+main > section.description {
+    grid-area: description;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 
 main>aside.sidebar {
     grid-area: sidebar;
@@ -87,10 +97,6 @@ footer.site-footer {
     
 }
 
-section.description {
-    grid-column:2;
-    grid-row:1/3;
-}
 
 .pull-left {
     margin-right: 2rem;
