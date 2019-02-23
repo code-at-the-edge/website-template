@@ -6,24 +6,72 @@
     --color-error: #d43939;
     --color-success: #28bd14;
     --grid-maxWidth: 100vw;
+    /* --grid-maxWidth: 120rem; */
     --grid-gutter: 0.5rem;
     --font-size: 1.6rem;
     --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
                    "Droid Sans", "Helvetica Neue", sans-serif;
     --color-lightestGrey: #e0e4dd;
+ 
+
+}
+
+
+body {
+    background-color: var(--color-lightestGrey);
+
+    }
+
+div#outside-container {
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    background-color: var(--color-grey);
+    
+    background-color: var(--color-lightestGrey);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: center; 
 }
 
 main > * {
-    /* border: 1px solid black; */
-    background-color: var(--color-lightestGrey);
+    margin: 10px;
+}
+main > section.description {
+    flex-basis: 25%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}
+
+main > article {
+    flex-basis: 60%;
+}
+
+main>aside.sidebar {
+    flex-basis: 25%;
+}
+
+.pictures {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: stretch;
 }
 
 
+.pictures > img {
+    margin: 10px;
+    flex-basis: 25%
+}
+
+.pictures > p {
+    flex-basis: 50%;
+}
 header.site-header {
     background-color: var(--color-lightGrey);
 }
@@ -31,4 +79,8 @@ header.site-header {
 footer.site-footer {
     background-color: var(--color-lightGrey);
     
+}
+
+.pull-left {
+    margin-right: 2rem;
 }
