@@ -11,19 +11,21 @@ div#outside-container, body {
 .card {
     background-color: violet;
 }
-main {
+
+div.student {
     
     background-color: inherit;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-items: center; 
+    justify-items: center;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
 }
-
-main > * {
+div.student > * {
     padding: 15px;
 }
-main > section.description {
+div.student > section.description {
     flex-basis: 25%;
     max-height: 100%;
     display: flex;
@@ -31,12 +33,12 @@ main > section.description {
     justify-items: stretch;
 }
 
-main > article {
+div.student > article {
     flex-basis: 66%;
     padding-bottom: 0px;
 }
 
-main>.sidebar {
+div.student > .sidebar {
     flex-basis: 33%;
     background-color: palegreen;
 }
